@@ -18,8 +18,8 @@ class Product(BaseModel):
     
     
 class ProductMetaInfo(BaseModel):
-    product= models.OneToOneField(Product, on_delete=models.CASCADE, related_name="meta info" )
-    quantity= models.CharField(null=True, blank= True)
+    product= models.OneToOneField(Product, on_delete=models.CASCADE, related_name="meta_info" )
+    quantity= models.CharField(max_length= 20,null=True, blank= True)
     product_unit= models.CharField(max_length=100, choices=(("kg", "kg"), ("ml", "ml"), ("L","L"), ("pcs","pcs")))
     restrict= models.IntegerField()
     is_restrict= models.BinaryField(default=False)
